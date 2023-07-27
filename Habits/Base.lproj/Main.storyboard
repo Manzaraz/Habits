@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="1440.4580152671756" y="-662.67605633802816"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Home-->
         <scene sceneID="5mN-mj-Ocu">
             <objects>
-                <collectionViewController id="j4K-c3-os2" sceneMemberID="viewController">
+                <collectionViewController title="Home" id="j4K-c3-os2" customClass="HomeCollectionViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="RuH-qs-MQv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="3860.3053435114502" y="-663.38028169014092"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Habits-->
         <scene sceneID="51a-Rd-LXN">
             <objects>
-                <collectionViewController id="av9-FZ-ie4" sceneMemberID="viewController">
+                <collectionViewController title="Habits" id="av9-FZ-ie4" customClass="HabitCollectionViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Mbr-bA-sAz">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,6 +134,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <segue destination="NS2-Fj-bVn" kind="show" id="hUb-Gv-1fG"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -146,10 +150,26 @@
             </objects>
             <point key="canvasLocation" x="2244" y="142"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Habit Detail View Controller-->
+        <scene sceneID="5vN-Dy-DYJ">
+            <objects>
+                <viewController id="NS2-Fj-bVn" customClass="HabitDetailViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Phr-JY-e6E">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="VB1-mo-9wo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="SYy-cK-YdB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ali-NE-zB7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2244" y="894"/>
+        </scene>
+        <!--People-->
         <scene sceneID="3qU-su-ZRS">
             <objects>
-                <collectionViewController id="EZB-bN-OlB" sceneMemberID="viewController">
+                <collectionViewController title="People" id="EZB-bN-OlB" customClass="UserCollectionViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="5Jo-cF-FCn">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,6 +188,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <segue destination="JfM-2i-fg2" kind="show" id="zDM-13-EvO"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -181,10 +204,10 @@
             </objects>
             <point key="canvasLocation" x="3053" y="142"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Log Habit-->
         <scene sceneID="1A0-nF-Yhd">
             <objects>
-                <collectionViewController id="zrH-gu-LGZ" sceneMemberID="viewController">
+                <collectionViewController title="Log Habit" id="zrH-gu-LGZ" customClass="LogHabitCollectionViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Zfe-no-BZB">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -235,6 +258,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YT7-Pe-e6k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2602" y="-1534"/>
+        </scene>
+        <!--User Collection View Controller-->
+        <scene sceneID="TDB-8c-lsi">
+            <objects>
+                <viewController id="JfM-2i-fg2" customClass="UserCollectionViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jlT-Hv-731">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Yh6-0g-9D5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Dhx-Ha-hzb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fn1-0H-zGh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3053" y="894"/>
         </scene>
     </scenes>
     <resources>
