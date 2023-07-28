@@ -13,3 +13,7 @@ struct Category {
     let color: Color
     
 }
+
+extension Category: Codable {
+    
+}
