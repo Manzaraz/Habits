@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		61C3D2132A72BCC6008592CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3D2122A72BCC6008592CA /* AppDelegate.swift */; };
 		61C3D2152A72BCC6008592CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3D2142A72BCC6008592CA /* SceneDelegate.swift */; };
-		61C3D2172A72BCC6008592CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3D2162A72BCC6008592CA /* ViewController.swift */; };
 		61C3D21A2A72BCC6008592CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C3D2182A72BCC6008592CA /* Main.storyboard */; };
 		61C3D21C2A72BCC9008592CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61C3D21B2A72BCC9008592CA /* Assets.xcassets */; };
 		61C3D21F2A72BCC9008592CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C3D21D2A72BCC9008592CA /* LaunchScreen.storyboard */; };
+		61C3D2272A72F74D008592CA /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3D2262A72F74D008592CA /* HomeCollectionViewController.swift */; };
+		61C3D2292A72F7BE008592CA /* HabitCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3D2282A72F7BE008592CA /* HabitCollectionViewController.swift */; };
+		61C3D22B2A72F7EB008592CA /* UserCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3D22A2A72F7EB008592CA /* UserCollectionViewController.swift */; };
+		61C3D22D2A72F81B008592CA /* LogHabitCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3D22C2A72F81B008592CA /* LogHabitCollectionViewController.swift */; };
+		61C3D22F2A7301E7008592CA /* HabitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3D22E2A7301E7008592CA /* HabitDetailViewController.swift */; };
+		61C3D2312A7301FD008592CA /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3D2302A7301FD008592CA /* UserDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		61C3D20F2A72BCC6008592CA /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61C3D2122A72BCC6008592CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61C3D2142A72BCC6008592CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		61C3D2162A72BCC6008592CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		61C3D2192A72BCC6008592CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		61C3D21B2A72BCC9008592CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61C3D21E2A72BCC9008592CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61C3D2202A72BCC9008592CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61C3D2262A72F74D008592CA /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
+		61C3D2282A72F7BE008592CA /* HabitCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewController.swift; sourceTree = "<group>"; };
+		61C3D22A2A72F7EB008592CA /* UserCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewController.swift; sourceTree = "<group>"; };
+		61C3D22C2A72F81B008592CA /* LogHabitCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogHabitCollectionViewController.swift; sourceTree = "<group>"; };
+		61C3D22E2A7301E7008592CA /* HabitDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailViewController.swift; sourceTree = "<group>"; };
+		61C3D2302A7301FD008592CA /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +68,16 @@
 			children = (
 				61C3D2122A72BCC6008592CA /* AppDelegate.swift */,
 				61C3D2142A72BCC6008592CA /* SceneDelegate.swift */,
-				61C3D2162A72BCC6008592CA /* ViewController.swift */,
 				61C3D2182A72BCC6008592CA /* Main.storyboard */,
 				61C3D21B2A72BCC9008592CA /* Assets.xcassets */,
 				61C3D21D2A72BCC9008592CA /* LaunchScreen.storyboard */,
 				61C3D2202A72BCC9008592CA /* Info.plist */,
+				61C3D2262A72F74D008592CA /* HomeCollectionViewController.swift */,
+				61C3D2282A72F7BE008592CA /* HabitCollectionViewController.swift */,
+				61C3D22E2A7301E7008592CA /* HabitDetailViewController.swift */,
+				61C3D22A2A72F7EB008592CA /* UserCollectionViewController.swift */,
+				61C3D2302A7301FD008592CA /* UserDetailViewController.swift */,
+				61C3D22C2A72F81B008592CA /* LogHabitCollectionViewController.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -138,9 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61C3D2172A72BCC6008592CA /* ViewController.swift in Sources */,
+				61C3D22D2A72F81B008592CA /* LogHabitCollectionViewController.swift in Sources */,
+				61C3D2312A7301FD008592CA /* UserDetailViewController.swift in Sources */,
+				61C3D2272A72F74D008592CA /* HomeCollectionViewController.swift in Sources */,
+				61C3D2292A72F7BE008592CA /* HabitCollectionViewController.swift in Sources */,
+				61C3D22F2A7301E7008592CA /* HabitDetailViewController.swift in Sources */,
 				61C3D2132A72BCC6008592CA /* AppDelegate.swift in Sources */,
 				61C3D2152A72BCC6008592CA /* SceneDelegate.swift in Sources */,
+				61C3D22B2A72F7EB008592CA /* UserCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
