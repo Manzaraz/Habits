@@ -23,6 +23,11 @@ extension APIRequest {
 }
 
 extension APIRequest {
+    var queryItems: [URLQueryItem]? { nil }
+    var postData: Data? { nil }
+}
+
+extension APIRequest {
     var request: URLRequest {
         var components = URLComponents()
         

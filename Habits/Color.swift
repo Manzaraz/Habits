@@ -16,9 +16,9 @@ struct Color {
 
 extension Color: Codable {
     enum CodingKeys: String, CodingKey {
-    case hue = "h"
-    case saturation = "s"
-    case brightness = "b"
+        case hue = "h"
+        case saturation = "s"
+        case brightness = "b"
     }
 }
 
