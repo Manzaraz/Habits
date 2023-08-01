@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		614E0B052A7977F800864D55 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614E0B042A7977F800864D55 /* Settings.swift */; };
 		614E0B072A79862500864D55 /* UICollectionViewDiffableDataSource+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614E0B062A79862500864D55 /* UICollectionViewDiffableDataSource+ViewModel.swift */; };
+		614E0B092A7997D400864D55 /* NamedSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614E0B082A7997D400864D55 /* NamedSectionHeaderView.swift */; };
 		6190AB542A7355280000D08B /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6190AB532A7355280000D08B /* Habit.swift */; };
 		6190AB562A7356000000D08B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6190AB552A7356000000D08B /* Category.swift */; };
 		6190AB582A73563F0000D08B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6190AB572A73563F0000D08B /* Color.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		614E0B042A7977F800864D55 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		614E0B062A79862500864D55 /* UICollectionViewDiffableDataSource+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewDiffableDataSource+ViewModel.swift"; sourceTree = "<group>"; };
+		614E0B082A7997D400864D55 /* NamedSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedSectionHeaderView.swift; sourceTree = "<group>"; };
 		6190AB532A7355280000D08B /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		6190AB552A7356000000D08B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		6190AB572A73563F0000D08B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				6190AB5B2A7364100000D08B /* APIService.swift */,
 				614E0B042A7977F800864D55 /* Settings.swift */,
 				614E0B062A79862500864D55 /* UICollectionViewDiffableDataSource+ViewModel.swift */,
+				614E0B082A7997D400864D55 /* NamedSectionHeaderView.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				614E0B072A79862500864D55 /* UICollectionViewDiffableDataSource+ViewModel.swift in Sources */,
 				6190AB582A73563F0000D08B /* Color.swift in Sources */,
 				61C3D2312A7301FD008592CA /* UserDetailViewController.swift in Sources */,
+				614E0B092A7997D400864D55 /* NamedSectionHeaderView.swift in Sources */,
 				614E0B052A7977F800864D55 /* Settings.swift in Sources */,
 				61C3D2272A72F74D008592CA /* HomeCollectionViewController.swift in Sources */,
 				61C3D2292A72F7BE008592CA /* HabitCollectionViewController.swift in Sources */,
