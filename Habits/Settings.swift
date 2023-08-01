@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum Settings {
+enum Setting {
     static let favoriteHabits = "favoriteHabits"
     
 }
@@ -35,10 +35,10 @@ struct Settings {
     
     var favoriteHabits: [Habit] {
         get {
-            return unarchiveJSON(key: Settings.favoriteHabits) ?? []
+            return unarchiveJSON(key: Setting.favoriteHabits) ?? []
         }
         set {
-            archiveJSON(value: newValue, key: Settings.favoriteHabits)
+            archiveJSON(value: newValue, key: Setting.favoriteHabits)
         }
     }
     
