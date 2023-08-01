@@ -84,9 +84,7 @@ class HabitCollectionViewController: UICollectionViewController {
         }
         
         let sectionIDs = itemsBySeciton.keys.sorted()
-        
+        dataSource.applySnapshotUsing(sectionIDs: sectionIDs, itemsBySection: itemsBySeciton)
     }
-
-
 
 }
