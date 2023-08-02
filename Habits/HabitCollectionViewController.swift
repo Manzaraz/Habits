@@ -174,7 +174,7 @@ class HabitCollectionViewController: UICollectionViewController {
         let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
             let item = self.dataSource.itemIdentifier(for: indexPath)!
             
-            let favoriteToggle = UIAction(title: self.model.favoriteHabits.contains(item) ? "No Favorito" : "Favorito") { (action) in
+            let favoriteToggle = UIAction(title: self.model.favoriteHabits.contains(item) ? "No es Favorito" : "Favorito") { (action) in
                 Settings.shared.toggleFavorite(item)
                 self.updateCollectionView()
             }
