@@ -10,6 +10,7 @@ import Foundation
 
 enum Setting {
     static let favoriteHabits = "favoriteHabits"
+    static let followedUserIDs = "followedUserIDs"
     
 }
 
@@ -51,6 +52,15 @@ struct Settings {
         }
         
         favoriteHabits = favorites
+    }
+    
+    var followedUserIDs: [String] {
+        get {
+            return unarchiveJSON(key: Setting.followedUserIDs) ?? []
+        }
+        set {
+            archiveJSON(value: newValue, key: Setting.followedUserIDs)
+        }
     }
     
 }
