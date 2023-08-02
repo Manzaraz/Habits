@@ -31,6 +31,7 @@ extension UICollectionViewDiffableDataSource {
     )  {
         
         var snapshot = NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifierType>()
+        
         for sectionID in sectionIDs {
             guard
                 let sectionItems = itemsBySection[sectionID],

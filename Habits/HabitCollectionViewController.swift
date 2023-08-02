@@ -43,6 +43,7 @@ class HabitCollectionViewController: UICollectionViewController {
                 }
             }
         }
+        
         typealias Item = Habit
     }
 
@@ -121,12 +122,9 @@ class HabitCollectionViewController: UICollectionViewController {
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: SectionHeader.kind.identifier, alignment: .top)
         sectionHeader.pinToVisibleBounds = true
                
-        
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
         section.boundarySupplementaryItems = [sectionHeader]
-        
-        
         
         return UICollectionViewCompositionalLayout(section: section)
     }
@@ -174,7 +172,7 @@ class HabitCollectionViewController: UICollectionViewController {
         let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
             let item = self.dataSource.itemIdentifier(for: indexPath)!
             
-            let favoriteToggle = UIAction(title: self.model.favoriteHabits.contains(item) ? "No es Favorito" : "Favorito") { (action) in
+            let favoriteToggle = UIAction(title: self.model.favoriteHabits.contains(item) ? "No me Gusta" : "Me Gusta") { (action) in
                 Settings.shared.toggleFavorite(item)
                 self.updateCollectionView()
             }
