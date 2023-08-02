@@ -41,5 +41,16 @@ struct Settings {
             archiveJSON(value: newValue, key: Setting.favoriteHabits)
         }
     }
+    mutating func toggleFavorite(_ habit: Habit) {
+        var favorites = favoriteHabits
+        
+        if favorites.contains(habit) {
+            favorites = favorites.filter { $0 != habit }
+        } else {
+            favorites.append(habit)
+        }
+        
+        favoriteHabits = favorites
+    }
     
 }

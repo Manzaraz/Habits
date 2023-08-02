@@ -165,5 +165,29 @@ class HabitCollectionViewController: UICollectionViewController {
         let sectionIDs = itemsBySeciton.keys.sorted()
         dataSource.applySnapshotUsing(sectionIDs: sectionIDs, itemsBySection: itemsBySeciton)
     }
+    
+    override func collectionView(
+        _ collectionView: UICollectionView,
+        contextMenuConfigurationForItemAt indexPath: IndexPath,
+        point: CGPoint
+    ) -> UIContextMenuConfiguration? {
+        let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
+            let item = self.dataSource.itemIdentifier(for: indexPath)!
+            
+            let favoriteToggle = UIAction(title: self.model.favoriteHabits.contains(item) ? "No Favorito" : "Favorito") { (action) in
+                Settings.shared.toggleFavorite(item)
+                self.updateCollectionView()
+            }
+            
+            return UIMenu(
+                title: "",
+                image: nil,
+                identifier: nil,
+                options: [],
+                children: [favoriteToggle]
+            )
+        }
+        return config
+    }
 
 }
