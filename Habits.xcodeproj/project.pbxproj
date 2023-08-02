@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		614E0B052A7977F800864D55 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614E0B042A7977F800864D55 /* Settings.swift */; };
+		614E0B072A79862500864D55 /* UICollectionViewDiffableDataSource+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614E0B062A79862500864D55 /* UICollectionViewDiffableDataSource+ViewModel.swift */; };
+		614E0B092A7997D400864D55 /* NamedSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614E0B082A7997D400864D55 /* NamedSectionHeaderView.swift */; };
+		6190AB542A7355280000D08B /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6190AB532A7355280000D08B /* Habit.swift */; };
+		6190AB562A7356000000D08B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6190AB552A7356000000D08B /* Category.swift */; };
+		6190AB582A73563F0000D08B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6190AB572A73563F0000D08B /* Color.swift */; };
+		6190AB5A2A735C850000D08B /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6190AB592A735C850000D08B /* APIRequest.swift */; };
+		6190AB5C2A7364100000D08B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6190AB5B2A7364100000D08B /* APIService.swift */; };
 		61C3D2132A72BCC6008592CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3D2122A72BCC6008592CA /* AppDelegate.swift */; };
 		61C3D2152A72BCC6008592CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3D2142A72BCC6008592CA /* SceneDelegate.swift */; };
 		61C3D21A2A72BCC6008592CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C3D2182A72BCC6008592CA /* Main.storyboard */; };
@@ -21,6 +29,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		614E0B042A7977F800864D55 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		614E0B062A79862500864D55 /* UICollectionViewDiffableDataSource+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewDiffableDataSource+ViewModel.swift"; sourceTree = "<group>"; };
+		614E0B082A7997D400864D55 /* NamedSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedSectionHeaderView.swift; sourceTree = "<group>"; };
+		6190AB532A7355280000D08B /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		6190AB552A7356000000D08B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		6190AB572A73563F0000D08B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		6190AB592A735C850000D08B /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		6190AB5B2A7364100000D08B /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		61C3D20F2A72BCC6008592CA /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61C3D2122A72BCC6008592CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61C3D2142A72BCC6008592CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +94,14 @@
 				61C3D22A2A72F7EB008592CA /* UserCollectionViewController.swift */,
 				61C3D2302A7301FD008592CA /* UserDetailViewController.swift */,
 				61C3D22C2A72F81B008592CA /* LogHabitCollectionViewController.swift */,
+				6190AB532A7355280000D08B /* Habit.swift */,
+				6190AB552A7356000000D08B /* Category.swift */,
+				6190AB572A73563F0000D08B /* Color.swift */,
+				6190AB592A735C850000D08B /* APIRequest.swift */,
+				6190AB5B2A7364100000D08B /* APIService.swift */,
+				614E0B042A7977F800864D55 /* Settings.swift */,
+				614E0B062A79862500864D55 /* UICollectionViewDiffableDataSource+ViewModel.swift */,
+				614E0B082A7997D400864D55 /* NamedSectionHeaderView.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -154,12 +178,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				61C3D22D2A72F81B008592CA /* LogHabitCollectionViewController.swift in Sources */,
+				6190AB562A7356000000D08B /* Category.swift in Sources */,
+				614E0B072A79862500864D55 /* UICollectionViewDiffableDataSource+ViewModel.swift in Sources */,
+				6190AB582A73563F0000D08B /* Color.swift in Sources */,
 				61C3D2312A7301FD008592CA /* UserDetailViewController.swift in Sources */,
+				614E0B092A7997D400864D55 /* NamedSectionHeaderView.swift in Sources */,
+				614E0B052A7977F800864D55 /* Settings.swift in Sources */,
 				61C3D2272A72F74D008592CA /* HomeCollectionViewController.swift in Sources */,
 				61C3D2292A72F7BE008592CA /* HabitCollectionViewController.swift in Sources */,
 				61C3D22F2A7301E7008592CA /* HabitDetailViewController.swift in Sources */,
 				61C3D2132A72BCC6008592CA /* AppDelegate.swift in Sources */,
+				6190AB542A7355280000D08B /* Habit.swift in Sources */,
+				6190AB5C2A7364100000D08B /* APIService.swift in Sources */,
 				61C3D2152A72BCC6008592CA /* SceneDelegate.swift in Sources */,
+				6190AB5A2A735C850000D08B /* APIRequest.swift in Sources */,
 				61C3D22B2A72F7EB008592CA /* UserCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
