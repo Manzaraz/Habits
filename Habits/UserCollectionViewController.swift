@@ -8,11 +8,15 @@
 import UIKit
 
 class UserCollectionViewController: UICollectionViewController {
+    
+    // Keep track of async tasks so they can be cancelled when appropiate
+    var usersRequestTask: Task<Void, Never>? = nil
+    deinit { usersRequestTask?.cancel() }
 
     typealias DataSourceType = UICollectionViewDiffableDataSource<ViewModel.Section, ViewModel.Item>
     
     enum ViewModel {
-        typealias Item = Int
+        typealias Section = Int
         
         struct Item: Hashable {
             let user: User
@@ -44,7 +48,31 @@ class UserCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 
     }
-
-
-
+    
+    
+    func update() {
+        usersRequestTask?.cancel()
+        usersRequestTask = Task {
+            if let users = try? await UserRequest().send() {
+                self.model.usersByID = users
+            } else {
+                self.model.usersByID = [:]
+            }
+            self.updateCollectionView()
+            
+            usersRequestTask = nil
+        }
+    }
+    
+    func updateCollectionView() {
+        let users = model.usersByID.values.sorted().reduce(into: [ViewModel.Item]()) { partial, user in
+            partial.append(ViewModel.Item(user: user, isFollowed: model.followedUsers.contains(user)))
+        }
+        
+        let itemsBySection = [0: users]
+        
+        dataSource.applySnapshotUsing(sectionIDs: [0], itemsBySection: itemsBySection)
+    }
+    
+    
 }
