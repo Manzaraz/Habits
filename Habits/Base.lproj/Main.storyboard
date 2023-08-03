@@ -102,7 +102,7 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="393" height="50"/>
                                 <connections>
-                                    <segue destination="gpg-SP-l36" kind="show" id="2vJ-LL-xJI"/>
+                                    <segue destination="gpg-SP-l36" kind="show" destinationCreationSelector="showHabitDetail:sender:" id="2vJ-LL-xJI"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
