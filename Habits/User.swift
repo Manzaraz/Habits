@@ -18,6 +18,7 @@ struct User {
 extension User: Codable { }
 
 extension User: Hashable {
+    
     func hash(into hasher: inout Hasher)  {
         hasher.combine(id)
     }

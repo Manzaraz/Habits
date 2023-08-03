@@ -100,7 +100,7 @@ class HabitCollectionViewController: UICollectionViewController {
             let section = dataSource.snapshot().sectionIdentifiers[indexPath.section]
             switch section {
                 case .favorites:
-                    header.nameLabel.text = "Favoritos"
+                    header.nameLabel.text = "Favorites"
                 case .category(let category):
                     header.nameLabel.text = category.name
             }
@@ -172,7 +172,7 @@ class HabitCollectionViewController: UICollectionViewController {
         let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
             let item = self.dataSource.itemIdentifier(for: indexPath)!
             
-            let favoriteToggle = UIAction(title: self.model.favoriteHabits.contains(item) ? "No me Gusta" : "Me Gusta") { (action) in
+            let favoriteToggle = UIAction(title: self.model.favoriteHabits.contains(item) ? "No Favorite" : "Favorite") { (action) in
                 Settings.shared.toggleFavorite(item)
                 self.updateCollectionView()
             }

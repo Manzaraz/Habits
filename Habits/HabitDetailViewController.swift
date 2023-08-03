@@ -57,6 +57,8 @@ class HabitDetailViewController: UIViewController {
         
     var habit: Habit!
     
+    var updateTimer: Timer?
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -65,6 +67,8 @@ class HabitDetailViewController: UIViewController {
         self.habit = habit
         super.init(coder: coder)
     }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +82,25 @@ class HabitDetailViewController: UIViewController {
         
         update()
         
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        update()
+        
+        updateTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            self.update()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        updateTimer?.invalidate()
+        updateTimer = nil
     }
     
     func createDataSource() -> DataSourceType  {
