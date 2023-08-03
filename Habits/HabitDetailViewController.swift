@@ -14,6 +14,9 @@ class HabitDetailViewController: UIViewController {
     @IBOutlet var infoLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     
+    // Keep track of async tasks so they can be cancelled when appropiate
+    var habitStatisticsRequestTask: Task<Void, Never>? = nil
+    deinit { habitStatisticsRequestTask?.cancel() }
     
     typealias DataSourceType = UICollectionViewDiffableDataSource<ViewModel.Section, ViewModel.Item>
     
@@ -71,6 +74,30 @@ class HabitDetailViewController: UIViewController {
         infoLabel.text = habit.info
         
     }
+    
+    func update() {
+        habitStatisticsRequestTask?.cancel()
+        habitStatisticsRequestTask = Task {
+            if
+                let statistics = try? await HabitStatisticsRequest(habitNames: [habit.name]).send(),
+                statistics.count > 0
+            {
+                self.model.habitStatistics = statistics[0]
+            } else {
+                self.model.habitStatistics = nil
+            }
+            self.updateCollectionView()
+            
+            habitStatisticsRequestTask = nil
+        }
+    }
+    
+    func updateCollectionView()  {
+        let items = (self.model.habitStatistics?.userCounts.map{ ViewModel.Item.single($0) } ?? []).sorted(by: >)
+        
+        dataSource.applySnapshotUsing(sectionIDs: [.remaining], itemsBySection: [.remaining: items])
+    }
+
 
 
 }
