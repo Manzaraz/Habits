@@ -323,7 +323,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
                                 <connections>
-                                    <segue destination="qPs-RT-ggy" kind="show" id="sv3-b5-jki"/>
+                                    <segue destination="qPs-RT-ggy" kind="show" destinationCreationSelector="showUserDetail:sender:" id="sv3-b5-jki"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

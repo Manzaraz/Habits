@@ -42,12 +42,12 @@ class UserDetailViewController: UIViewController {
             
             static func < (lhs: Section, rhs: Section) -> Bool {
                 switch (lhs, rhs) {
-                case (.leading, .category), (.leading, .leading):
-                    return true
-                case (.category, .leading):
-                    return false
-                case (category(let category1), category(let category2)):
-                    return category1.name > category2.name
+                    case (.leading, .category), (.leading, .leading):
+                        return true
+                    case (.category, .leading):
+                        return false
+                    case (category(let category1), category(let category2)):
+                        return category1.name > category2.name
                 }
             }
         }
@@ -62,6 +62,9 @@ class UserDetailViewController: UIViewController {
     
     var dataSource: DataSourceType!
     var model = Model()
+    
+    var updateTimer: Timer?
+    
     
     var user: User!
     
@@ -91,6 +94,24 @@ class UserDetailViewController: UIViewController {
         update()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        update()
+        
+        updateTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            self.update()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        updateTimer?.invalidate()
+        updateTimer = nil
+    }
+    
     
     func createDataSource() -> DataSourceType {
         let dataSource = DataSourceType(collectionView: collectionView) { (collectionView, indexPath, habitStat) -> UICollectionViewCell? in
