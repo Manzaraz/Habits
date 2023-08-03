@@ -87,6 +87,7 @@ class UserCollectionViewController: UICollectionViewController {
     }
     
     func update() {
+        
         usersRequestTask?.cancel()
         usersRequestTask = Task {
             if let users = try? await UserRequest().send() {
@@ -94,6 +95,7 @@ class UserCollectionViewController: UICollectionViewController {
             } else {
                 self.model.usersByID = [:]
             }
+            
             self.updateCollectionView()
             
             usersRequestTask = nil
@@ -113,11 +115,12 @@ class UserCollectionViewController: UICollectionViewController {
     override func collectionView(
         _ collectionView: UICollectionView,
         contextMenuConfigurationForItemAt indexPath: IndexPath,
-        point: CGPoint) -> UIContextMenuConfiguration? {
+        point: CGPoint
+    ) -> UIContextMenuConfiguration? {
             let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (elements) -> UIMenu? in
                 guard let item = self.dataSource.itemIdentifier(for: indexPath) else { return nil }
                 
-                let favoriteToggle = UIAction(title: item.isFollowed ? "Dejar de Seguir" : "Seguir") { (action) in
+                let favoriteToggle = UIAction(title: item.isFollowed ? "Unfollow" : "Follow") { (action) in
                     Settings.shared.toggleFollowed(user: item.user)
                     self.updateCollectionView()
                 }

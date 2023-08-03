@@ -43,6 +43,7 @@ class HabitCollectionViewController: UICollectionViewController {
                 }
             }
         }
+        
         typealias Item = Habit
     }
 
@@ -99,7 +100,7 @@ class HabitCollectionViewController: UICollectionViewController {
             let section = dataSource.snapshot().sectionIdentifiers[indexPath.section]
             switch section {
                 case .favorites:
-                    header.nameLabel.text = "Favoritos"
+                    header.nameLabel.text = "Favorites"
                 case .category(let category):
                     header.nameLabel.text = category.name
             }
@@ -121,12 +122,9 @@ class HabitCollectionViewController: UICollectionViewController {
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: SectionHeader.kind.identifier, alignment: .top)
         sectionHeader.pinToVisibleBounds = true
                
-        
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
         section.boundarySupplementaryItems = [sectionHeader]
-        
-        
         
         return UICollectionViewCompositionalLayout(section: section)
     }
@@ -174,7 +172,7 @@ class HabitCollectionViewController: UICollectionViewController {
         let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
             let item = self.dataSource.itemIdentifier(for: indexPath)!
             
-            let favoriteToggle = UIAction(title: self.model.favoriteHabits.contains(item) ? "No es Favorito" : "Favorito") { (action) in
+            let favoriteToggle = UIAction(title: self.model.favoriteHabits.contains(item) ? "No Favorite" : "Favorite") { (action) in
                 Settings.shared.toggleFavorite(item)
                 self.updateCollectionView()
             }
@@ -189,5 +187,15 @@ class HabitCollectionViewController: UICollectionViewController {
         }
         return config
     }
+    
+    @IBSegueAction func showHabitDetail(_ coder: NSCoder, sender: UICollectionViewCell?) -> HabitDetailViewController? {
+        guard
+            let cell = sender,
+            let indexPath = collectionView.indexPath(for: cell),
+            let item = dataSource.itemIdentifier(for: indexPath)
+        else { return nil }
+        return HabitDetailViewController(coder: coder, habit: item)
+    }
+    
 
 }

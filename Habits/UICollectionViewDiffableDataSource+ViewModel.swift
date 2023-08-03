@@ -31,6 +31,7 @@ extension UICollectionViewDiffableDataSource {
     )  {
         
         var snapshot = NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifierType>()
+        
         for sectionID in sectionIDs {
             guard
                 let sectionItems = itemsBySection[sectionID],
@@ -39,6 +40,7 @@ extension UICollectionViewDiffableDataSource {
             
             snapshot.appendSections([sectionID])
             snapshot.appendItems(sectionItems, toSection: sectionID)
+            snapshot.reloadItems(sectionItems)
         }
         
         self.apply(snapshot, animatingDifferences: animatingDifferences)
