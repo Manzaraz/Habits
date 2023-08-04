@@ -5,7 +5,6 @@
 //  Created by Christian Manzaraz on 27/07/2023.
 //
 
-import Foundation
 import UIKit
 
 protocol APIRequest {
@@ -70,3 +69,23 @@ extension APIRequest where Response: Decodable {
     }
 }
 
+enum ImageRequestError: Error {
+    case couldNotInitializeFromData
+    case imageDataMissing
+}
+
+extension APIRequest where Response == UIImage {
+    func send() async throws -> UIImage {
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw ImageRequestError.imageDataMissing
+        }
+
+        guard let image = UIImage(data: data) else {
+            throw ImageRequestError.couldNotInitializeFromData
+        }
+        
+        return image
+    }
+}
