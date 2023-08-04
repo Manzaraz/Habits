@@ -84,12 +84,20 @@ class UserDetailViewController: UIViewController {
 
         userNameLabel.text = user.name
         bioLabel.text = user.bio
+
         
         collectionView.register(NamedSectionHeaderView.self, forSupplementaryViewOfKind: SectionHeader.kind.identifier, withReuseIdentifier: SectionHeader.reuse.identifier)
         
         dataSource = createDataSource()
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = createLayout()
+        
+//        imageRequestTask = Task {
+//            if let image = try? await ImageRequest(imageID: user.id).send() {
+//                profileImageView.image = image
+//            }
+//            self.imageRequestTask = nil
+//        }
         
         update()
         
@@ -194,6 +202,14 @@ class UserDetailViewController: UIViewController {
             self.updateCollectionView()
             
             habitLeadStatisticsRequestTask = nil
+        }
+        
+        imageRequestTask?.cancel()
+        imageRequestTask = Task {
+            if let image = try? await ImageRequest(imageID: user.id).send() {
+                profileImageView.image = image
+            }
+            self.imageRequestTask = nil
         }
         
     }

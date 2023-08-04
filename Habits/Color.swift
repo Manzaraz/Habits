@@ -5,7 +5,8 @@
 //  Created by Christian Manzaraz on 27/07/2023.
 //
 
-import Foundation
+import UIKit
+
 struct Color {
     let hue: Double
     let saturation: Double
