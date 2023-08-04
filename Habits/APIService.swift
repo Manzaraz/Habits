@@ -60,3 +60,12 @@ struct HabitLeadStatisticsRequest: APIRequest {
     var path: String { "/userLeadingStats/\(userID)" }
         
 }
+
+
+struct ImageRequest: APIRequest {
+    typealias Response = UIImage
+    
+    var imageID: String
+    
+    var path: String { "/images/" + imageID}
+}
