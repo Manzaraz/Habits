@@ -5,7 +5,7 @@
 //  Created by Christian Manzaraz on 27/07/2023.
 //
 
-import Foundation
+import UIKit
 
 struct HabitRequest: APIRequest {    
     typealias Response = [String: Habit]
@@ -58,6 +58,5 @@ struct HabitLeadStatisticsRequest: APIRequest {
     
     var userID: String
     var path: String { "/userLeadingStats/\(userID)" }
-    
-    
+        
 }
