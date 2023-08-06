@@ -31,6 +31,7 @@
 		61C3D22D2A72F81B008592CA /* LogHabitCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3D22C2A72F81B008592CA /* LogHabitCollectionViewController.swift */; };
 		61C3D22F2A7301E7008592CA /* HabitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3D22E2A7301E7008592CA /* HabitDetailViewController.swift */; };
 		61C3D2312A7301FD008592CA /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3D2302A7301FD008592CA /* UserDetailViewController.swift */; };
+		61C585452A7F2B0B0012995D /* LoggedHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C585442A7F2B0B0012995D /* LoggedHabit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		61C3D22C2A72F81B008592CA /* LogHabitCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogHabitCollectionViewController.swift; sourceTree = "<group>"; };
 		61C3D22E2A7301E7008592CA /* HabitDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailViewController.swift; sourceTree = "<group>"; };
 		61C3D2302A7301FD008592CA /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		61C585442A7F2B0B0012995D /* LoggedHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedHabit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				614E0B0A2A79ECC800864D55 /* User.swift */,
 				61B397A42A7C27640028F5AE /* UserStatistics.swift */,
 				61B397A62A7C27C90028F5AE /* HabitCount.swift */,
+				61C585442A7F2B0B0012995D /* LoggedHabit.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			files = (
 				614E0B0F2A7B07FA00864D55 /* UserCount.swift in Sources */,
 				61C3D22D2A72F81B008592CA /* LogHabitCollectionViewController.swift in Sources */,
+				61C585452A7F2B0B0012995D /* LoggedHabit.swift in Sources */,
 				6190AB562A7356000000D08B /* Category.swift in Sources */,
 				614E0B072A79862500864D55 /* UICollectionViewDiffableDataSource+ViewModel.swift in Sources */,
 				6190AB582A73563F0000D08B /* Color.swift in Sources */,
