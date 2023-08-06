@@ -77,4 +77,6 @@ struct Settings {
         followedUserIDs = updated
     }
     
+    let currentUser = User(id: "activeUser", name: "Christian Manzaraz", color: nil, bio: nil)
+    
 }
