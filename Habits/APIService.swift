@@ -69,7 +69,7 @@ struct ImageRequest: APIRequest {
     var path: String { "/images/" + imageID }
 }
 
-struct logHabitRequest: APIRequest {
+struct LogHabitRequest: APIRequest {
     typealias Response = Void
     
     var loggedHabit: LoggedHabit
