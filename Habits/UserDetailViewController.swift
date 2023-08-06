@@ -92,12 +92,12 @@ class UserDetailViewController: UIViewController {
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = createLayout()
         
-//        imageRequestTask = Task {
-//            if let image = try? await ImageRequest(imageID: user.id).send() {
-//                profileImageView.image = image
-//            }
-//            self.imageRequestTask = nil
-//        }
+        imageRequestTask = Task {
+            if let image = try? await ImageRequest(imageID: user.id).send() {
+                profileImageView.image = image
+            }
+            self.imageRequestTask = nil
+        }
         
         update()
         
