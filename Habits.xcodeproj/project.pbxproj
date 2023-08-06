@@ -32,6 +32,8 @@
 		61C3D22F2A7301E7008592CA /* HabitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3D22E2A7301E7008592CA /* HabitDetailViewController.swift */; };
 		61C3D2312A7301FD008592CA /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3D2302A7301FD008592CA /* UserDetailViewController.swift */; };
 		61C585452A7F2B0B0012995D /* LoggedHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C585442A7F2B0B0012995D /* LoggedHabit.swift */; };
+		61C585472A7F4AE30012995D /* LeaderboardHabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C585462A7F4AE30012995D /* LeaderboardHabitCollectionViewCell.swift */; };
+		61C585492A7F599A0012995D /* FollowedUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C585482A7F599A0012995D /* FollowedUserCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		61C3D22E2A7301E7008592CA /* HabitDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailViewController.swift; sourceTree = "<group>"; };
 		61C3D2302A7301FD008592CA /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		61C585442A7F2B0B0012995D /* LoggedHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedHabit.swift; sourceTree = "<group>"; };
+		61C585462A7F4AE30012995D /* LeaderboardHabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardHabitCollectionViewCell.swift; sourceTree = "<group>"; };
+		61C585482A7F599A0012995D /* FollowedUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowedUserCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 				61B397A42A7C27640028F5AE /* UserStatistics.swift */,
 				61B397A62A7C27C90028F5AE /* HabitCount.swift */,
 				61C585442A7F2B0B0012995D /* LoggedHabit.swift */,
+				61C585462A7F4AE30012995D /* LeaderboardHabitCollectionViewCell.swift */,
+				61C585482A7F599A0012995D /* FollowedUserCollectionViewCell.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -204,9 +210,11 @@
 				61C3D2312A7301FD008592CA /* UserDetailViewController.swift in Sources */,
 				614E0B092A7997D400864D55 /* NamedSectionHeaderView.swift in Sources */,
 				614E0B052A7977F800864D55 /* Settings.swift in Sources */,
+				61C585492A7F599A0012995D /* FollowedUserCollectionViewCell.swift in Sources */,
 				614E0B0B2A79ECC800864D55 /* User.swift in Sources */,
 				61B397A52A7C27640028F5AE /* UserStatistics.swift in Sources */,
 				61C3D2272A72F74D008592CA /* HomeCollectionViewController.swift in Sources */,
+				61C585472A7F4AE30012995D /* LeaderboardHabitCollectionViewCell.swift in Sources */,
 				61C3D2292A72F7BE008592CA /* HabitCollectionViewController.swift in Sources */,
 				61C3D22F2A7301E7008592CA /* HabitDetailViewController.swift in Sources */,
 				614E0B0D2A7B07AD00864D55 /* HabitStatistics.swift in Sources */,
