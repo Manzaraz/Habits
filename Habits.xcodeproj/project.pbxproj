@@ -34,6 +34,7 @@
 		61C585452A7F2B0B0012995D /* LoggedHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C585442A7F2B0B0012995D /* LoggedHabit.swift */; };
 		61C585472A7F4AE30012995D /* LeaderboardHabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C585462A7F4AE30012995D /* LeaderboardHabitCollectionViewCell.swift */; };
 		61C585492A7F599A0012995D /* FollowedUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C585482A7F599A0012995D /* FollowedUserCollectionViewCell.swift */; };
+		61C5854D2A805AFE0012995D /* CombinedStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5854C2A805AFE0012995D /* CombinedStatistics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		61C585442A7F2B0B0012995D /* LoggedHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedHabit.swift; sourceTree = "<group>"; };
 		61C585462A7F4AE30012995D /* LeaderboardHabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardHabitCollectionViewCell.swift; sourceTree = "<group>"; };
 		61C585482A7F599A0012995D /* FollowedUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowedUserCollectionViewCell.swift; sourceTree = "<group>"; };
+		61C5854C2A805AFE0012995D /* CombinedStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedStatistics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				61C585442A7F2B0B0012995D /* LoggedHabit.swift */,
 				61C585462A7F4AE30012995D /* LeaderboardHabitCollectionViewCell.swift */,
 				61C585482A7F599A0012995D /* FollowedUserCollectionViewCell.swift */,
+				61C5854C2A805AFE0012995D /* CombinedStatistics.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				61C585472A7F4AE30012995D /* LeaderboardHabitCollectionViewCell.swift in Sources */,
 				61C3D2292A72F7BE008592CA /* HabitCollectionViewController.swift in Sources */,
 				61C3D22F2A7301E7008592CA /* HabitDetailViewController.swift in Sources */,
+				61C5854D2A805AFE0012995D /* CombinedStatistics.swift in Sources */,
 				614E0B0D2A7B07AD00864D55 /* HabitStatistics.swift in Sources */,
 				61B397A72A7C27C90028F5AE /* HabitCount.swift in Sources */,
 				61C3D2132A72BCC6008592CA /* AppDelegate.swift in Sources */,
