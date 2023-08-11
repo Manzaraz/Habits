@@ -17,6 +17,22 @@ class NamedSectionHeaderView: UICollectionReusableView {
         return label
     } ()
     
+    var _centerYConstraint: NSLayoutConstraint?
+    var centerYConstraint: NSLayoutConstraint {
+        if _centerYConstraint == nil {
+            _centerYConstraint = nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+        }
+        return _centerYConstraint!
+    }
+    
+    var _topYConstraint: NSLayoutConstraint?
+    var topYConstraint: NSLayoutConstraint {
+        if _topYConstraint == nil {
+            _topYConstraint = nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 12)
+        }
+        return _topYConstraint!
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -34,10 +50,21 @@ class NamedSectionHeaderView: UICollectionReusableView {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-            nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12)
         ])
+        
+        alignLabelToYCenter()
     }
+    
+    func alignLabelToTop() {
+        topYConstraint.isActive = true
+        centerYConstraint.isActive = false
+    }
+    func alignLabelToYCenter() {
+        topYConstraint.isActive = false
+        centerYConstraint.isActive = true
+    }
+    
 }
 
 
