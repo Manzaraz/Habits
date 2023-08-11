@@ -85,6 +85,12 @@ class UserDetailViewController: UIViewController {
         userNameLabel.text = user.name
         bioLabel.text = user.bio
 
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.backgroundColor = .quaternarySystemFill
+        tabBarController?.tabBar.scrollEdgeAppearance = tabBarAppearance
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.backgroundColor = .quaternarySystemFill
+        navigationItem.scrollEdgeAppearance = navBarAppearance
         
         collectionView.register(NamedSectionHeaderView.self, forSupplementaryViewOfKind: SectionHeader.kind.identifier, withReuseIdentifier: SectionHeader.reuse.identifier)
         
@@ -92,12 +98,15 @@ class UserDetailViewController: UIViewController {
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = createLayout()
         
+        view.backgroundColor = user.color?.uiColor ?? .white
+        
         imageRequestTask = Task {
             if let image = try? await ImageRequest(imageID: user.id).send() {
                 profileImageView.image = image
             }
             self.imageRequestTask = nil
         }
+        
         
         update()
         
