@@ -269,7 +269,7 @@ class HomeCollectionViewController: UICollectionViewController {
                 
                 leaderboardSection.boundarySupplementaryItems = [header]
                 leaderboardSection.decorationItems = [background]
-//                leaderboardSection.supplementariesFollowContentInsets = false
+                // leaderboardSection.supplementariesFollowContentInsets = false
                 
                 leaderboardSection.interGroupSpacing = 20
                 leaderboardSection.orthogonalScrollingBehavior = .continuous
