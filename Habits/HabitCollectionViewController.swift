@@ -42,6 +42,16 @@ class HabitCollectionViewController: UICollectionViewController {
                     return false
                 }
             }
+            
+            var sectionColor: UIColor {
+                switch self {
+                case .favorites:
+                    return UIColor(hue: 0.15, saturation: 1, brightness: 0.9,
+                       alpha: 1)
+                case .category(let category):
+                    return category.color.uiColor
+                }
+            }
         }
         
         typealias Item = Habit
@@ -104,6 +114,8 @@ class HabitCollectionViewController: UICollectionViewController {
                 case .category(let category):
                     header.nameLabel.text = category.name
             }
+            
+            header.backgroundColor = section.sectionColor
             
             return header
         }

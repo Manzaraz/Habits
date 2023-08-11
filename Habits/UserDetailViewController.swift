@@ -50,6 +50,17 @@ class UserDetailViewController: UIViewController {
                         return category1.name > category2.name
                 }
             }
+            
+            var sectionColor: UIColor {
+                switch self {
+                case .leading:
+                    return .systemGray4
+                case .category(let category):
+                    return category.color.uiColor
+                }
+            }
+            
+            
         }
         
         typealias Item = HabitCount
@@ -151,6 +162,8 @@ class UserDetailViewController: UIViewController {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: SectionHeader.kind.identifier, withReuseIdentifier: SectionHeader.reuse.identifier, for: indexPath) as! NamedSectionHeaderView
             
             let section = dataSource.snapshot().sectionIdentifiers[indexPath.section]
+            
+            header.backgroundColor = section.sectionColor
             
             switch section {
                 case .leading:
