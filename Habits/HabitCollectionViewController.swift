@@ -46,8 +46,8 @@ class HabitCollectionViewController: UICollectionViewController {
             var sectionColor: UIColor {
                 switch self {
                 case .favorites:
-                    return UIColor(hue: 0.15, saturation: 1, brightness: 0.9,
-                       alpha: 1)
+//                    return UIColor(hue: 0.15, saturation: 1, brightness: 0.9, alpha: 1)
+                    return favoriteHabitColor
                 case .category(let category):
                     return category.color.uiColor
                 }
@@ -74,6 +74,7 @@ class HabitCollectionViewController: UICollectionViewController {
         dataSource = createDataSource()
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = createLayout()
+        
         collectionView.register(
             NamedSectionHeaderView.self,
             forSupplementaryViewOfKind: SectionHeader.kind.identifier,
@@ -88,14 +89,20 @@ class HabitCollectionViewController: UICollectionViewController {
         update()
     }
 
+    func configureCell(_ cell: UICollectionViewListCell, withItem item: ViewModel.Item) {
+        var content = cell.defaultContentConfiguration()
+        content.text = item.name
+        cell.contentConfiguration = content        
+    }
     
     func createDataSource() -> DataSourceType {
         let dataSource = DataSourceType(collectionView: collectionView) { (collectionView, indexPath, item) in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Habit", for: indexPath) as! UICollectionViewListCell
             
-            var content = cell.defaultContentConfiguration()
-            content.text = item.name
-            cell.contentConfiguration = content
+//            var content = cell.defaultContentConfiguration()
+//            content.text = item.name
+//            cell.contentConfiguration = content
+            self.configureCell(cell, withItem: item)
             
             return cell
         }
@@ -173,6 +180,7 @@ class HabitCollectionViewController: UICollectionViewController {
         itemsBySeciton = itemsBySeciton.mapValues { $0.sorted() }
         
         let sectionIDs = itemsBySeciton.keys.sorted()
+        
         dataSource.applySnapshotUsing(sectionIDs: sectionIDs, itemsBySection: itemsBySeciton)
     }
     
@@ -184,7 +192,7 @@ class HabitCollectionViewController: UICollectionViewController {
         let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
             let item = self.dataSource.itemIdentifier(for: indexPath)!
             
-            let favoriteToggle = UIAction(title: self.model.favoriteHabits.contains(item) ? "No Favorite" : "Favorite") { (action) in
+            let favoriteToggle = UIAction(title: self.model.favoriteHabits.contains(item) ? "Unfavorite" : "Favorite") { (action) in
                 Settings.shared.toggleFavorite(item)
                 self.updateCollectionView()
             }
@@ -206,6 +214,7 @@ class HabitCollectionViewController: UICollectionViewController {
             let indexPath = collectionView.indexPath(for: cell),
             let item = dataSource.itemIdentifier(for: indexPath)
         else { return nil }
+        
         return HabitDetailViewController(coder: coder, habit: item)
     }
     

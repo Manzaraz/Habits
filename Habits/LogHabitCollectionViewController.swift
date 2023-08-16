@@ -47,7 +47,7 @@ class LogHabitCollectionViewController: HabitCollectionViewController {
         }
     }
     
-     func configureCell(_ cell: UICollectionViewListCell, withItem item: ViewModel.Item) {
+    override func configureCell(_ cell: UICollectionViewListCell, withItem item: ViewModel.Item) {
         
         cell.configurationUpdateHandler =  { cell, state in
             var content = UIListContentConfiguration.cell().updated(for: state)

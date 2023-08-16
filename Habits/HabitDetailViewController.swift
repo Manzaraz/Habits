@@ -19,7 +19,7 @@ class HabitDetailViewController: UIViewController {
     deinit { habitStatisticsRequestTask?.cancel() }
     
     typealias DataSourceType = UICollectionViewDiffableDataSource<ViewModel.Section, ViewModel.Item>
-    
+
     enum ViewModel {
         enum Section: Hashable {
             case leaders (count: Int)
@@ -30,7 +30,7 @@ class HabitDetailViewController: UIViewController {
             case single (_ stat: UserCount)
             case multiple (_ stat: [UserCount])
             
-            static func < (_ lhs: Item, rhs: Item) -> Bool {
+            static func < (lhs: Item, rhs: Item) -> Bool {
                 switch (lhs, rhs) {
                 case (.single(let lCount), .single(let rCount)):
                     return lCount.count < rCount.count
@@ -67,23 +67,19 @@ class HabitDetailViewController: UIViewController {
         self.habit = habit
         super.init(coder: coder)
     }
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        nameLabel.text = habit.name
-//        categoryLabel.text = habit.category.name
-//        infoLabel.text = habit.info
+        nameLabel.text = habit.name
+        categoryLabel.text = habit.category.name
+        infoLabel.text = habit.info
+        
         dataSource = createDataSource()
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = createLayout()
         
         update()
-        
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,13 +99,12 @@ class HabitDetailViewController: UIViewController {
         updateTimer = nil
     }
     
-    func createDataSource() -> DataSourceType  {
+    func createDataSource() -> DataSourceType {
         return DataSourceType(collectionView: collectionView) { (collectionView, indexPath, grouping) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserCount", for: indexPath) as! UICollectionViewListCell
-            
+
             var content = UIListContentConfiguration.subtitleCell()
             content.prefersSideBySideTextAndSecondaryText = true
-            
             switch grouping {
             case .single(let userStat):
                 content.text = userStat.user.name
@@ -120,7 +115,7 @@ class HabitDetailViewController: UIViewController {
                 break
             }
             cell.contentConfiguration = content
-            
+
             return cell
         }
     }
@@ -142,10 +137,7 @@ class HabitDetailViewController: UIViewController {
     func update() {
         habitStatisticsRequestTask?.cancel()
         habitStatisticsRequestTask = Task {
-            if
-                let statistics = try? await HabitStatisticsRequest(habitNames: [habit.name]).send(),
-                statistics.count > 0
-            {
+            if let statistics = try? await HabitStatisticsRequest(habitNames: [habit.name]).send(), statistics.count > 0 {
                 self.model.habitStatistics = statistics[0]
             } else {
                 self.model.habitStatistics = nil
