@@ -50,6 +50,17 @@ class UserDetailViewController: UIViewController {
                         return category1.name > category2.name
                 }
             }
+            
+            var sectionColor: UIColor {
+                switch self {
+                case .leading:
+                    return .systemGray4
+                case .category(let category):
+                    return category.color.uiColor
+                }
+            }
+            
+            
         }
         
         typealias Item = HabitCount
@@ -85,6 +96,12 @@ class UserDetailViewController: UIViewController {
         userNameLabel.text = user.name
         bioLabel.text = user.bio
 
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.backgroundColor = .quaternarySystemFill
+        tabBarController?.tabBar.scrollEdgeAppearance = tabBarAppearance
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.backgroundColor = .quaternarySystemFill
+        navigationItem.scrollEdgeAppearance = navBarAppearance
         
         collectionView.register(NamedSectionHeaderView.self, forSupplementaryViewOfKind: SectionHeader.kind.identifier, withReuseIdentifier: SectionHeader.reuse.identifier)
         
@@ -92,12 +109,15 @@ class UserDetailViewController: UIViewController {
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = createLayout()
         
+        view.backgroundColor = user.color?.uiColor ?? .white
+        
         imageRequestTask = Task {
             if let image = try? await ImageRequest(imageID: user.id).send() {
                 profileImageView.image = image
             }
             self.imageRequestTask = nil
         }
+        
         
         update()
         
@@ -142,6 +162,8 @@ class UserDetailViewController: UIViewController {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: SectionHeader.kind.identifier, withReuseIdentifier: SectionHeader.reuse.identifier, for: indexPath) as! NamedSectionHeaderView
             
             let section = dataSource.snapshot().sectionIdentifiers[indexPath.section]
+            
+            header.backgroundColor = section.sectionColor
             
             switch section {
                 case .leading:
